@@ -1,0 +1,3 @@
+include ':modelmapping'
+include ':app'
+rootProject.name = "Model Mapper"
