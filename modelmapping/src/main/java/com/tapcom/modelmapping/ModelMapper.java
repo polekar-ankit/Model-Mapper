@@ -29,8 +29,13 @@ public class ModelMapper {
             if (annotation != null) {
                 fieldName = annotation.name();
                 Field desField = destination.getClass().getDeclaredField(fieldName);
-
+                if(!field.isAccessible()){
+                    field.setAccessible(true);
+                }
                 if (desField.getType() == field.getType()) {
+                    if(!desField.isAccessible()){
+                        desField.setAccessible(true);
+                    }
                     desField.set(destination, field.get(sourceClass));
                 } else
                     throw new DataTypeNotPresentException(fieldName + " is not found on " + destination.getClass());

@@ -12,7 +12,13 @@
         <activity
             android:name="com.tapcom.sample.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.ModelMapper.NoActionBar"></activity>
+            android:theme="@style/Theme.ModelMapper.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
